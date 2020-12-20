@@ -30,7 +30,6 @@ pipeline {
 			]]
 		])
 
-		sh ' gradle --b ./cinema/build.gradle clean '
       }
     }
     
