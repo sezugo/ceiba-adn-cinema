@@ -32,7 +32,7 @@ pipeline {
 			url:'https://github.com/sezugo/ceiba-adn-cinema'
 			]]
 		])
-		sh ' gradle --b ./cinema/build.gradle clean '
+		//sh ' gradle --b ./cinema/build.gradle clean '
       }
     }
     
