@@ -32,7 +32,7 @@ pipeline {
 			url:'https://github.com/sezugo/ceiba-adn-cinema'
 			]]
 		])
-		//sh ' gradle --b ./cinema/build.gradle clean '
+		sh ' gradle --b ./cinema-backend/cinema/build.gradle clean '
       }
     }
     
@@ -42,8 +42,17 @@ pipeline {
 					
 		echo "------------>Unit Test<------------"
 					
-		//sh 'gradle --b ./build.gradle test'
+		sh 'gradle --b ./cinema-backend/cinema/build.gradle test'
 		
+      }
+    }
+	
+	stage('Static Code Analysis') {
+      steps{
+        echo '------------>Análisis de código estático<------------'
+        withSonarQubeEnv('Sonar') {
+		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+        }
       }
     }
 
