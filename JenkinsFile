@@ -31,14 +31,15 @@ pipeline {
 			credentialsId: 'GitHub_sezugo', 
 			url:'https://github.com/sezugo/ceiba-adn-cinema'
 			]]
-		])	
+		])
+		sh ' gradle --b ./cinema/build.gradle clean '
       }
     }
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-		sh 'gradle gradle --b ./cinema/build.gradle compileJava'
+		//sh 'gradle gradle --b ./cinema/build.gradle compileJava'
 					
 		echo "------------>Unit Test<------------"
 					
