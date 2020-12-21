@@ -10,8 +10,6 @@ group = 'com.ceiba'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-
-
 repositories {
 	mavenCentral()
 }
@@ -25,6 +23,20 @@ dependencies {
 	//runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile('org.modelmapper:modelmapper:2.3.0')
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//runtimeOnly 'com.h2database:h2'
+	//runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompile 'junit:junit:4.12'
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.1.0'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
 }
 
 test {
@@ -33,17 +45,16 @@ test {
 
 sonarqube {
 	properties {
+		property "sonar.sourceEncoding", "UTF-8"
+	}
+}
+sonarqube {
+	properties {
 		property "sonar.sources", "src/main/java"
 		property "sonar.java.binaries", "build/classes/java/main"
 		property "sonar.tests", "src/test/java"
 		property "sonar.test.binaries", "build/classes/java/test"
-		property "sonar.jacoco.reportPaths", "build/jacoco/test.exec"
+		property "sonar.jacoco.reportPaths", "path/reports/jacoco/jacocoTestReport.xml"
 		property "sonar.junit.reportPaths", "build/test-results/test"
-	}
-}
-
-sonarqube {
-	properties {
-		property "sonar.sourceEncoding", "UTF-8"
 	}
 }
