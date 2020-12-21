@@ -42,7 +42,7 @@ pipeline {
 					
 		echo "------------>Unit Test<------------"
 					
-		//sh 'gradle --b ./cinema-backend/cinema/build.gradle -x test'
+		sh 'gradle --b ./cinema-backend/cinema/build.gradle test'
 		
       }
     }
