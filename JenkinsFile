@@ -40,7 +40,7 @@ pipeline {
 		
       }
     }
-
+	//funciona
     //stage('Static Code Analysis') {
       //steps{
         //echo '------------>Análisis de código estático<------------'
@@ -50,7 +50,7 @@ pipeline {
       //}
     //}
 
-
+	//funciona
     stage('Build') {
       steps {
         echo "------------>Build<------------"
