@@ -3,12 +3,6 @@ pipeline {
   agent {
     label 'Slave_Induccion'
   }
-  
-  //Opciones específicas de Pipeline dentro del Pipeline
-  options {
-    	buildDiscarder(logRotator(numToKeepStr: '3'))
- 	disableConcurrentBuilds()
-  }
 	
 	tools {
     jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
@@ -31,12 +25,39 @@ pipeline {
 			credentialsId: 'GitHub_sezugo', 
 			url:'https://github.com/sezugo/ceiba-adn-cinema'
 			]]
-		])
-		sh ' gradle --b ./cinema-backend/cinema/build.gradle clean '
+		])	
       }
     }
     
-   
+    stage('Compile & Unit Tests') {
+      steps{
+        echo "------------>Unit Tests<------------"
+		//sh 'gradle gradle --b ./build.gradle clean'
+					
+		echo "------------>Unit Test<------------"
+					
+		sh 'gradle --b ./build.gradle test'
+		
+      }
+    }
+
+    stage('Static Code Analysis') {
+      steps{
+        echo '------------>Análisis de código estático<------------'
+        withSonarQubeEnv('Sonar') {
+		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+        }
+      }
+    }
+
+    stage('Build') {
+      steps {
+        echo "------------>Build<------------"
+		sh 'gradle --b ./build.gradle build -x test'
+      }
+    }  
+  }
+
   post {
     always {
       echo 'This will always run'
