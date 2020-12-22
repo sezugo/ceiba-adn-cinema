@@ -35,7 +35,11 @@ dependencies {
 	//runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+	testCompile 'junit:junit:4.12'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
 	//compile('org.modelmapper:modelmapper:2.3.0')
 	//compileOnly 'org.projectlombok:lombok'
 	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -58,6 +62,7 @@ sonarqube {
 		property "sonar.test.binaries", "build/classes/java/test"
 		property "sonar.jacoco.reportPaths", "path/reports/jacoco/jacocoTestReport.xml"
 		property "sonar.junit.reportPaths", "build/test-results/test"
+
 	}
 }
 
@@ -65,4 +70,9 @@ jacocoTestReport {
 	reports {
 		xml.enabled true
 	}
+}
+
+test {
+	useJUnitPlatform()
+	dependsOn 'cleanTest'
 }
