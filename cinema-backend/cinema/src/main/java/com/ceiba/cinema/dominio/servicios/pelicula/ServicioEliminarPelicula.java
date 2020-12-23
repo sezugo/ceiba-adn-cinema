@@ -5,7 +5,7 @@ import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioPelicula;
 
 public class ServicioEliminarPelicula {
 
-    private RepositorioPelicula repositorioPelicula;
+    private final RepositorioPelicula repositorioPelicula;
 
     public ServicioEliminarPelicula(RepositorioPelicula repositorioPelicula){
         this.repositorioPelicula = repositorioPelicula;

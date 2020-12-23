@@ -4,7 +4,7 @@ import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioAlquiler;
 
 public class ServicioEliminarAlquiler {
 
-    private RepositorioAlquiler repositorioAlquiler;
+    private final RepositorioAlquiler repositorioAlquiler;
 
     public ServicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler){
         this.repositorioAlquiler = repositorioAlquiler;
