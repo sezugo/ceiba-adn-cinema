@@ -4,11 +4,11 @@ import com.ceiba.cinema.dominio.servicios.alquiler.ServicioEliminarAlquiler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorEliminarReserva {
+public class ManejadorEliminarAlquiler {
 
     private final ServicioEliminarAlquiler eliminarAlquiler;
 
-    public ManejadorEliminarReserva(ServicioEliminarAlquiler eliminarAlquiler) {
+    public ManejadorEliminarAlquiler(ServicioEliminarAlquiler eliminarAlquiler) {
         this.eliminarAlquiler = eliminarAlquiler;
     }
 

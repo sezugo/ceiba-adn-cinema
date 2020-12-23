@@ -8,12 +8,12 @@ import com.ceiba.cinema.dominio.servicios.alquiler.ServicioCrearAlquiler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearReserva {
+public class ManejadorCrearAlquiler {
 
     private final ServicioCrearAlquiler servicioCrearAlquiler;
     private final FabricaAlquiler fabricaAlquiler;
 
-    public ManejadorCrearReserva(ServicioCrearAlquiler servicioCrearAlquiler, FabricaAlquiler fabricaAlquiler) {
+    public ManejadorCrearAlquiler(ServicioCrearAlquiler servicioCrearAlquiler, FabricaAlquiler fabricaAlquiler) {
         this.servicioCrearAlquiler = servicioCrearAlquiler;
         this.fabricaAlquiler = fabricaAlquiler;
     }

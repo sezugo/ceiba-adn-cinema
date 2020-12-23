@@ -1,11 +1,14 @@
 package com.ceiba.cinema.infraestructura.controlador;
 
+import com.ceiba.cinema.aplicacion.comando.ComandoCliente;
 import com.ceiba.cinema.aplicacion.comando.manejador.cliente.ManejadorActualizarCliente;
 import com.ceiba.cinema.aplicacion.comando.manejador.cliente.ManejadorCrearCliente;
 import com.ceiba.cinema.aplicacion.comando.manejador.cliente.ManejadorEliminarCliente;
 import com.ceiba.cinema.aplicacion.consulta.manejador.cliente.ManejadorListarCliente;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ceiba.cinema.dominio.modelo.dto.ClienteDTO;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/cliente")
@@ -25,7 +28,24 @@ public class ControladorCliente {
         this.manejadorEliminarCliente = manejadorEliminarCliente;
     }
 
+    @PostMapping
+    public void crearCliente(@RequestBody ComandoCliente comandoCliente) {
+        this.manejadorCrearCliente.ejecutar(comandoCliente);
+    }
 
+    @GetMapping
+    public List<ClienteDTO> listarClientes(){
+        return this.manejadorListarCliente.ejecutar();
+    }
+
+    @PutMapping(value = "{idCliente}")
+    public void actualizarCliente(@RequestBody ComandoCliente comandoCliente, @PathVariable Integer idCliente){
+        this.manejadorActualizarCliente.ejecutar(comandoCliente, idCliente);
+    }
+
+    public void eliminarCLiente(@PathVariable String cedula){
+        this.manejadorEliminarCliente.ejecutar(cedula);
+    }
 
 
 
