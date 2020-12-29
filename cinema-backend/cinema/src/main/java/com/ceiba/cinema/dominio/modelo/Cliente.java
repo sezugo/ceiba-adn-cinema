@@ -1,6 +1,15 @@
 package com.ceiba.cinema.dominio.modelo;
 
+
+
 public class Cliente {
+
+    private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DEL_CLIENTE = "Se debe ingresar el nombre del cliente";
+    private static final String SE_DEBE_INGRESAR_EL_APELLIDO_DEL_CLIENTE = "Se debe ingresar el apellido del cliente";
+    private static final String SE_DEBE_INGRESAR_LA_CEDULA_DEL_CLIENTE = "Se debe ingresar el celular del cliente";
+    private static final String SE_DEBE_INGRESAR_EL_CELULAR_DE_USUARIO = "Se debe ingresar la cedula del cliente";
+    private static final String SE_DEBE_INGRESAR_LA_DIRRECION_DEL_CLIENTE = "Se debe ingresar la direccion del cliente";
+    private static final String SE_DEBE_INGRESAR_EL_CORREO_DE_USUARIO = "Se debe ingresar un correo correcto de la persona";
 
     private Integer idCliente;
     private String nombre;
@@ -13,6 +22,16 @@ public class Cliente {
 
     public Cliente (Integer idCliente, String nombre, String apellido, String cedula, String celular, String direccion, String correo){
         //Validaciones
+
+
+
+
+
+
+
+
+
+
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
