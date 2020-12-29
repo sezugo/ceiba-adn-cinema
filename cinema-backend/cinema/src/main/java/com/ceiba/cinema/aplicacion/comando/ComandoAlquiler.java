@@ -7,11 +7,13 @@ import java.time.LocalDateTime;
 
 public class ComandoAlquiler {
 
-    private Integer idAlquiler;
-    private Cliente cliente;
-    private Pelicula pelicula;
-    private LocalDateTime fecha;
-    private Double valorTotal;
+    private Integer idAlquiler; //innecesario
+    private Cliente cliente; // id_cliente
+    private Pelicula pelicula; // id_pelicula
+    private LocalDateTime fecha; //Innecesario
+    private Double valorTotal; //Innecesario
+
+
 
     public ComandoAlquiler(Integer idAlquiler, Cliente cliente, Pelicula pelicula, LocalDateTime fecha, Double valorTotal){
         this.idAlquiler = idAlquiler;

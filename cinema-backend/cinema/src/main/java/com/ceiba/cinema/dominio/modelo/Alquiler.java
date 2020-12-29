@@ -20,10 +20,11 @@ public class Alquiler {
 
     }
 
+    /*
     public Alquiler(){
 
     }
-
+    */
     public Integer getIdAlquiler() {
         return idAlquiler;
     }
@@ -44,17 +45,17 @@ public class Alquiler {
         return pelicula;
     }
 
-    public void setPelicula(Pelicula pelicula) {
+   /* public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
-    }
+    }*/
 
     public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    /*public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
-    }
+    }*/
 
     public Double getValorTotal() {
         return valorTotal;

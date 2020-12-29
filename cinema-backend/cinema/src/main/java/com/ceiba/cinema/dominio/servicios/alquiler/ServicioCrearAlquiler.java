@@ -26,7 +26,7 @@ public class ServicioCrearAlquiler {
         ClienteDTO clienteDTO = repositorioCliente.buscarClientePorId(alquiler.getCliente().getIdCliente());
         PeliculaDTO peliculaDTO = repositorioPelicula.buscarPeliculaPorId(alquiler.getPelicula().getIdPelicula());
         alquiler.setCliente(clienteDTO.construir());
-        alquiler.setPelicula(peliculaDTO.construir());
+        //alquiler.setPelicula(peliculaDTO.construir());
         this.repositorioAlquiler.crearAlquiler(alquiler);
 
     }

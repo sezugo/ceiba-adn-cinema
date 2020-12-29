@@ -18,6 +18,7 @@ public class ManejadorCrearAlquiler {
         this.fabricaAlquiler = fabricaAlquiler;
     }
 
+    //mandar los dos parametros del comando pelicula y cliente
     public void ejecutar (ComandoAlquiler comandoAlquiler){
         Alquiler alquiler = this.fabricaAlquiler.crear(comandoAlquiler);
         this.servicioCrearAlquiler.ejecutar(alquiler);

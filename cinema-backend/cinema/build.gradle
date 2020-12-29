@@ -67,8 +67,8 @@ jacocoTestReport {
 		xml.enabled true
 	}
 }
-
+/*
 test {
 	useJUnitPlatform()
 	//dependsOn 'cleanTest'
-}
+}*/
