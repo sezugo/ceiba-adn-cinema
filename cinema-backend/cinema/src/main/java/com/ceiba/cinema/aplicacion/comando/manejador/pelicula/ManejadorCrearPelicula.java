@@ -20,7 +20,6 @@ public class ManejadorCrearPelicula {
 
     public void ejecutar(ComandoPelicula comandoPelicula){
         Pelicula pelicula = this.fabricaPelicula.crear(comandoPelicula);
-        //validaciones de ser necesario
         this.servicioCrearPelicula.ejecutar(pelicula);
     }
 

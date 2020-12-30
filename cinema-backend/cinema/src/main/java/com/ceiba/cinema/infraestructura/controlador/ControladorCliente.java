@@ -32,15 +32,15 @@ public class ControladorCliente {
     public void crearCliente(@RequestBody ComandoCliente comandoCliente) {
         this.manejadorCrearCliente.ejecutar(comandoCliente);
     }
-
+    /*
     @GetMapping
     public List<ClienteDTO> listarClientes(){
         return this.manejadorListarCliente.ejecutar();
     }
-
+    */
     @PutMapping(value = "{idCliente}")
     public void actualizarCliente(@RequestBody ComandoCliente comandoCliente, @PathVariable Integer idCliente){
-        this.manejadorActualizarCliente.ejecutar(comandoCliente, idCliente);
+        this.manejadorActualizarCliente.ejecutar(comandoCliente);
     }
 
     public void eliminarCLiente(@PathVariable String cedula){

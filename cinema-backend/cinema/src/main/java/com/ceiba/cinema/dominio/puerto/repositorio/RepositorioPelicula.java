@@ -8,12 +8,8 @@ import java.util.List;
 public interface RepositorioPelicula {
 
     void crearPelicula(Pelicula pelicula);
-    List<PeliculaDTO> listarPeliculas();
     void actualizarPelicula(Pelicula pelicula);
     void eliminarPelicula(Integer idPelicula);
-    PeliculaDTO buscarPeliculaPorId(Integer idPelicula);
-    PeliculaDTO buscarPeliculaPorNombre(String nombrePelicula);
-    boolean peliculaYaExiste(Pelicula pelicula);
-
-
+    List<Pelicula> listarPeliculas();
+    //boolean peliculaYaExiste(Pelicula pelicula);
 }

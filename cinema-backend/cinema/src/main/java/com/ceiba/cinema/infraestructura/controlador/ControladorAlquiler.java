@@ -1,10 +1,10 @@
 package com.ceiba.cinema.infraestructura.controlador;
 
-import com.ceiba.cinema.aplicacion.comando.ComandoAlquiler;
-import com.ceiba.cinema.aplicacion.comando.manejador.alquiler.ManejadorCrearAlquiler;
-import com.ceiba.cinema.aplicacion.comando.manejador.alquiler.ManejadorEliminarAlquiler;
-import com.ceiba.cinema.aplicacion.consulta.manejador.alquiler.ManejadorListarAlquiler;
-import com.ceiba.cinema.dominio.modelo.dto.AlquilerDTO;
+import com.ceiba.cinema.aplicacion.comando.ComandoReserva;
+import com.ceiba.cinema.aplicacion.comando.manejador.reserva.ManejadorCrearReserva;
+import com.ceiba.cinema.aplicacion.comando.manejador.reserva.ManejadorEliminarReserva;
+import com.ceiba.cinema.aplicacion.consulta.manejador.reserva.ManejadorListarReserva;
+import com.ceiba.cinema.dominio.modelo.Reserva;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,29 +13,29 @@ import java.util.List;
 @RequestMapping(value = "/alquiler")
 public class ControladorAlquiler {
 
-    private final ManejadorCrearAlquiler manejadorCrearAlquiler;
-    private final ManejadorEliminarAlquiler manejadorEliminarAlquiler;
-    private final ManejadorListarAlquiler manejadorListarAlquiler;
+    private final ManejadorCrearReserva manejadorCrearReserva;
+    private final ManejadorEliminarReserva manejadorEliminarReserva;
+    private final ManejadorListarReserva manejadorListarReserva;
 
-    public ControladorAlquiler(ManejadorCrearAlquiler manejadorCrearAlquiler, ManejadorEliminarAlquiler manejadorEliminarAlquiler, ManejadorListarAlquiler manejadorListarAlquiler) {
-        this.manejadorCrearAlquiler = manejadorCrearAlquiler;
-        this.manejadorEliminarAlquiler = manejadorEliminarAlquiler;
-        this.manejadorListarAlquiler = manejadorListarAlquiler;
+    public ControladorAlquiler(ManejadorCrearReserva manejadorCrearReserva, ManejadorEliminarReserva manejadorEliminarReserva, ManejadorListarReserva manejadorListarReserva) {
+        this.manejadorCrearReserva = manejadorCrearReserva;
+        this.manejadorEliminarReserva = manejadorEliminarReserva;
+        this.manejadorListarReserva = manejadorListarReserva;
     }
 
     @PostMapping
-    public void crearAlquiler(@RequestBody ComandoAlquiler comandoAlquiler){
-        this.manejadorCrearAlquiler.ejecutar(comandoAlquiler);
+    public void crearAlquiler(@RequestBody ComandoReserva comandoReserva){
+        this.manejadorCrearReserva.ejecutar(comandoReserva);
     }
 
     @GetMapping
-    public List<AlquilerDTO> listarAlquiler(){
-        return this.manejadorListarAlquiler.ejecutar();
+    public List<Reserva> listarAlquiler(){
+        return this.manejadorListarReserva.ejecutar();
     }
 
     @DeleteMapping("/{idAlquiler}")
     public void eliminarAlquiler(@PathVariable Integer idAlquiler){
-        this.manejadorEliminarAlquiler.ejecutar(idAlquiler);
+        this.manejadorEliminarReserva.ejecutar(idAlquiler);
     }
 
 

@@ -17,13 +17,13 @@ public class ConvertirCliente {
         return modelMapper.map(cliente, ClienteEntidad.class);
     }
 
-    public ClienteDTO convertirClienteEntidadAClienteDTO(ClienteEntidad clienteEntidad){
-        return modelMapper.map(clienteEntidad, ClienteDTO.class);
+    public Cliente convertirClienteEntidadADominio(ClienteEntidad clienteEntidad){
+        return modelMapper.map(clienteEntidad, Cliente.class);
     }
 
-    public List<ClienteDTO> convertirListaCLienteEntidadAListarCliente(List<ClienteEntidad> listaClienteEntidad, List<ClienteDTO> listaCliente){
+    public List<Cliente> convertirListaCLienteEntidadAListarCliente(List<ClienteEntidad> listaClienteEntidad, List<Cliente> listaCliente){
         for(ClienteEntidad clienteEntidad: listaClienteEntidad){
-            ClienteDTO cliente = modelMapper.map(clienteEntidad, ClienteDTO.class);
+            Cliente cliente = modelMapper.map(clienteEntidad, Cliente.class);
             listaCliente.add(cliente);
         }
         return listaCliente;

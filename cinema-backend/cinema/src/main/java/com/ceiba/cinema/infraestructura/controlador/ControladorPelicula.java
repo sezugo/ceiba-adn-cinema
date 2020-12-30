@@ -30,20 +30,20 @@ public class ControladorPelicula {
     public void crearPelicula(@RequestBody ComandoPelicula comandoPelicula){
         this.manejadorCrearPelicula.ejecutar(comandoPelicula);
     }
-
+    /*
     @GetMapping
     public List<PeliculaDTO> listarPelicula(){
         return this.manejadorListarPelicula.ejecutar();
     }
-
+    */
     @PutMapping("/{idPelicula}")
     public void actualizarPelicula(@RequestBody ComandoPelicula comandoPelicula,
                                    @PathVariable Integer idPelicula){
-        this.manejadorActualizarPelicula.ejecutar(comandoPelicula, idPelicula);
+        this.manejadorActualizarPelicula.ejecutar(comandoPelicula);
     }
 
-    public void eliminarPelicula(@PathVariable String nombrePelicula){
-        this.manejadorEliminarPelicula.ejecutar(nombrePelicula);
+    public void eliminarPelicula(@PathVariable Integer idPelicula){
+        this.manejadorEliminarPelicula.ejecutar(idPelicula);
 
     }
     

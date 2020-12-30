@@ -1,32 +1,31 @@
 package com.ceiba.cinema.infraestructura.configuracion;
 
-import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioAlquiler;
+import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioReserva;
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioPelicula;
-import com.ceiba.cinema.dominio.servicios.alquiler.ServicioCrearAlquiler;
-import com.ceiba.cinema.dominio.servicios.alquiler.ServicioEliminarAlquiler;
-import com.ceiba.cinema.dominio.servicios.alquiler.ServicioListarAlquiler;
+import com.ceiba.cinema.dominio.servicios.reserva.ServicioCrearReserva;
+import com.ceiba.cinema.dominio.servicios.reserva.ServicioEliminarReserva;
+import com.ceiba.cinema.dominio.servicios.reserva.ServicioListarReserva;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 //@Configuration
 public class BeanServicioAlquiler {
 
     @Bean
-    public ServicioCrearAlquiler servicioCrearAlquiler(RepositorioAlquiler repositorioAlquiler,
-                                                       RepositorioCliente repositorioCliente,
-                                                       RepositorioPelicula repositorioPelicula){
-        return new ServicioCrearAlquiler(repositorioAlquiler, repositorioCliente, repositorioPelicula);
+    public ServicioCrearReserva servicioCrearAlquiler(RepositorioReserva repositorioReserva,
+                                                      RepositorioCliente repositorioCliente,
+                                                      RepositorioPelicula repositorioPelicula){
+        return new ServicioCrearReserva(repositorioReserva, repositorioCliente, repositorioPelicula);
     }
 
     @Bean
-    public ServicioEliminarAlquiler servicioEliminarAlquiler(RepositorioAlquiler repositorioAlquiler){
-        return new ServicioEliminarAlquiler(repositorioAlquiler);
+    public ServicioEliminarReserva servicioEliminarAlquiler(RepositorioReserva repositorioReserva){
+        return new ServicioEliminarReserva(repositorioReserva);
     }
 
     @Bean
-    public ServicioListarAlquiler servicioListarAlquiler(RepositorioAlquiler repositorioAlquiler){
-        return new ServicioListarAlquiler(repositorioAlquiler);
+    public ServicioListarReserva servicioListarAlquiler(RepositorioReserva repositorioReserva){
+        return new ServicioListarReserva(repositorioReserva);
     }
 
 }

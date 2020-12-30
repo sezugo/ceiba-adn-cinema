@@ -14,7 +14,7 @@ public class ServicioListarCliente {
         this.repositorioCliente = repositorioCliente;
     }
 
-    public List<ClienteDTO> ejecutar(){
+    public List<Cliente> ejecutar(){
         return this.repositorioCliente.listarClientes();
     }
 

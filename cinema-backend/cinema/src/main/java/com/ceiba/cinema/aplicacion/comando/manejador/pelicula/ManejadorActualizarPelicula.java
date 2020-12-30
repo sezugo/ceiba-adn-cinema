@@ -17,9 +17,8 @@ public class ManejadorActualizarPelicula {
         this.fabricaPelicula = fabricaPelicula;
     }
 
-    public void ejecutar(ComandoPelicula comandoPelicula, Integer idPelicula){
+    public void ejecutar(ComandoPelicula comandoPelicula){
         Pelicula pelicula = this.fabricaPelicula.crear(comandoPelicula);
-        pelicula.setIdPelicula(idPelicula);
         this.servicioActualizarPelicula.ejecutar(pelicula);
     }
 

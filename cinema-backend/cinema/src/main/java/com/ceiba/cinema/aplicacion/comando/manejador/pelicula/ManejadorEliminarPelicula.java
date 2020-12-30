@@ -12,8 +12,8 @@ public class ManejadorEliminarPelicula {
         this.servicioEliminarPelicula = servicioEliminarPelicula;
     }
 
-    public void ejecutar(String nombrePelicula){
-        this.servicioEliminarPelicula.ejecutar(nombrePelicula);
+    public void ejecutar(Integer idPelicula){
+        this.servicioEliminarPelicula.ejecutar(idPelicula);
     }
 
 }

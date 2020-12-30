@@ -1,16 +1,16 @@
 package com.ceiba.cinema.dominio.puerto.repositorio;
 
 
-import com.ceiba.cinema.dominio.modelo.Alquiler;
+import com.ceiba.cinema.dominio.modelo.Reserva;
 import com.ceiba.cinema.dominio.modelo.dto.AlquilerDTO;
 
 import java.util.List;
 
-public interface RepositorioAlquiler {
+public interface RepositorioReserva {
 
-    void crearAlquiler(Alquiler alquiler);
+    void crearReserva(Reserva reserva);
     void eliminarAlquiler(Integer idAlquiler);
-    List<AlquilerDTO> listarAlquiler();
+    List<Reserva> listarReserva();
 
 
 }

@@ -1,6 +1,6 @@
 package com.ceiba.cinema.aplicacion.consulta.manejador.cliente;
 
-import com.ceiba.cinema.dominio.modelo.dto.ClienteDTO;
+import com.ceiba.cinema.dominio.modelo.Cliente;
 import com.ceiba.cinema.dominio.servicios.cliente.ServicioListarCliente;
 
 import java.util.List;
@@ -12,7 +12,9 @@ public class ManejadorListarCliente {
     public ManejadorListarCliente(ServicioListarCliente servicioListarCliente) {
         this.servicioListarCliente = servicioListarCliente;
     }
-    public List<ClienteDTO> ejecutar(){
+
+    public List<Cliente> ejecutar(){
         return this.servicioListarCliente.ejecutar();
     }
+
 }

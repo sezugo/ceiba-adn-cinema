@@ -11,7 +11,6 @@ public class ComandoCliente {
     private String correo;
 
     public ComandoCliente (Integer idCliente, String nombre, String apellido, String cedula, String celular, String direccion, String correo){
-        //Validaciones
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;

@@ -12,9 +12,7 @@ public class ServicioActualizarPelicula {
     }
 
     public void ejecutar(Pelicula pelicula){
-        if(repositorioPelicula.peliculaYaExiste(pelicula)){
-            this.repositorioPelicula.actualizarPelicula(pelicula);
-        }
+        this.repositorioPelicula.actualizarPelicula(pelicula);
     }
 
 

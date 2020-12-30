@@ -1,7 +1,6 @@
 package com.ceiba.cinema.infraestructura.adaptador.repositorio;
 
 import com.ceiba.cinema.dominio.modelo.Cliente;
-import com.ceiba.cinema.dominio.modelo.dto.ClienteDTO;
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cinema.infraestructura.convertir.cliente.ConvertirCliente;
 import com.ceiba.cinema.infraestructura.entidades.ClienteEntidad;
@@ -15,10 +14,11 @@ import java.util.List;
 public class RepositorioClientePostgres implements RepositorioCliente {
 
     private RepositorioClienteJpa repositorioClienteJpa;
-    private ConvertirCliente convertirCliente = new ConvertirCliente();
+    private ConvertirCliente convertirCliente;
 
-    public RepositorioClientePostgres(RepositorioClienteJpa repositorioClienteJpa){
+    public RepositorioClientePostgres(RepositorioClienteJpa repositorioClienteJpa,ConvertirCliente convertirCliente){
         this.repositorioClienteJpa = repositorioClienteJpa;
+        this.convertirCliente = convertirCliente;
     }
 
     @Override
@@ -28,10 +28,10 @@ public class RepositorioClientePostgres implements RepositorioCliente {
     }
 
     @Override
-    public List<ClienteDTO> listarClientes(){
+    public List<Cliente> listarClientes(){
         List<ClienteEntidad> listaClienteEntidad = repositorioClienteJpa.findAll();
-        List<ClienteDTO> listaClienteDTO = new ArrayList<>();
-        return convertirCliente.convertirListaCLienteEntidadAListarCliente(listaClienteEntidad, listaClienteDTO);
+        List<Cliente> listaCliente = new ArrayList<>();
+        return convertirCliente.convertirListaCLienteEntidadAListarCliente(listaClienteEntidad, listaCliente);
     }
 
 
@@ -46,6 +46,18 @@ public class RepositorioClientePostgres implements RepositorioCliente {
         repositorioClienteJpa.deleteById(idCliente);
     }
 
+    @Override
+    public boolean clienteYaExiste(Cliente cliente){
+        String cedulaCliente = cliente.getCedula();
+        return (repositorioClienteJpa.findByCedula(cedulaCliente)) != null;
+    }
+
+    public Cliente buscarPorCedula(String cedula){
+        ClienteEntidad clienteEntidad = repositorioClienteJpa.findByCedula(cedula);
+        return (clienteEntidad == null ? null : convertirCliente.convertirClienteEntidadADominio(clienteEntidad));
+    }
+
+    /*
     @Override
     public ClienteDTO buscarClientePorId(Integer idCliente){
         ClienteEntidad clienteEntidad = repositorioClienteJpa.findById(idCliente).orElse(null);
@@ -67,11 +79,6 @@ public class RepositorioClientePostgres implements RepositorioCliente {
             return null;
         }
     }
-
-    @Override
-    public boolean clienteYaExiste(Cliente cliente){
-        String cedulaCliente = cliente.getCedula();
-        return (repositorioClienteJpa.findByCedula(cedulaCliente)) != null;
-    }
+    */
 
 }
