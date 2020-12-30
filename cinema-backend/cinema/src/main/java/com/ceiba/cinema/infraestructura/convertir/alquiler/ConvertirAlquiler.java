@@ -2,7 +2,7 @@ package com.ceiba.cinema.infraestructura.convertir.alquiler;
 
 import com.ceiba.cinema.dominio.modelo.Reserva;
 import com.ceiba.cinema.dominio.modelo.dto.AlquilerDTO;
-import com.ceiba.cinema.infraestructura.entidades.AlquilerEntidad;
+import com.ceiba.cinema.infraestructura.entidades.ReservaEntidad;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -13,12 +13,12 @@ public class ConvertirAlquiler {
 
     private ModelMapper modelMapper = new ModelMapper();
 
-    public AlquilerEntidad convertirAlquilerDominioAlquilerEntidad(Reserva reserva){
-        return modelMapper.map(reserva, AlquilerEntidad.class);
+    public ReservaEntidad convertirAlquilerDominioAlquilerEntidad(Reserva reserva){
+        return modelMapper.map(reserva, ReservaEntidad.class);
     }
 
-    public List<AlquilerDTO> convertirListaAlquilerEntidadAListaAlquiler(List<AlquilerEntidad> listaAlquilerEntidad, List<AlquilerDTO> listaAlquiler ){
-        for(AlquilerEntidad alquilerEntidad: listaAlquilerEntidad){
+    public List<AlquilerDTO> convertirListaAlquilerEntidadAListaAlquiler(List<ReservaEntidad> listaAlquilerEntidad, List<AlquilerDTO> listaAlquiler ){
+        for(ReservaEntidad alquilerEntidad: listaAlquilerEntidad){
             AlquilerDTO alquiler = modelMapper.map(alquilerEntidad, AlquilerDTO.class);
             listaAlquiler.add(alquiler);
         }

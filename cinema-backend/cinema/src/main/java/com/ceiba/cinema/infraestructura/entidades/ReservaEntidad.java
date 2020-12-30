@@ -5,13 +5,13 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "alquiler")
-public class AlquilerEntidad {
+@Table(name = "reserva")
+public class ReservaEntidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_alquiler")
-    private Integer idAlquiler;
+    @Column(name = "id_reserva")
+    private Integer idReserva;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
@@ -27,24 +27,24 @@ public class AlquilerEntidad {
     @Column(name = "valor_total")
     private Double valorTotal;
 
-    public AlquilerEntidad(Integer idAlquiler, ClienteEntidad cliente, PeliculaEntidad pelicula, LocalDateTime fecha, Double valorTotal){
-        this.idAlquiler = idAlquiler;
+    public ReservaEntidad(Integer idReserva, ClienteEntidad cliente, PeliculaEntidad pelicula, LocalDateTime fecha, Double valorTotal){
+        this.idReserva = idReserva;
         this.cliente = cliente;
         this.pelicula = pelicula;
         this.fecha = fecha;
         this.valorTotal = valorTotal;
     }
 
-    public AlquilerEntidad(){
+    public ReservaEntidad(){
 
     }
 
     public Integer getIdAlquiler() {
-        return idAlquiler;
+        return idReserva;
     }
 
     public void setIdAlquiler(Integer idAlquiler) {
-        this.idAlquiler = idAlquiler;
+        this.idReserva = idAlquiler;
     }
 
     public ClienteEntidad getCliente() {
