@@ -1,7 +1,7 @@
-package com.ceiba.cinema.dominio.unitaria.modelo;
+package com.ceiba.cinema.dominio;
 
 import com.ceiba.cinema.dominio.modelo.Cliente;
-import com.ceiba.cinema.testdatabuilder.dominio.modelo.ClienteTestDataBuilder;
+import com.ceiba.cinema.testdatabuilder.ClienteTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

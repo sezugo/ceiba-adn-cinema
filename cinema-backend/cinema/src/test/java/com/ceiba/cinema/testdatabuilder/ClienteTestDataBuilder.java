@@ -1,4 +1,4 @@
-package com.ceiba.cinema.testdatabuilder.dominio.modelo;
+package com.ceiba.cinema.testdatabuilder;
 
 import com.ceiba.cinema.dominio.modelo.Cliente;
 
