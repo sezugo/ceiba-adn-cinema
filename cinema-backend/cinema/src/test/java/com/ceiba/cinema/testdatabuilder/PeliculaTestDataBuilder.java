@@ -15,7 +15,7 @@ public class PeliculaTestDataBuilder {
         this.nombre = "Nosferatu";
         this.categoria = "Terror";
         this.publicada = "1922";
-        this.valor = 50000D;
+        this.valor = 50000d;
     }
 
     public PeliculaTestDataBuilder conNombre(String nombre){
