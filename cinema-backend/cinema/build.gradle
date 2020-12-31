@@ -53,14 +53,12 @@ sonarqube {
 		property "sonar.test.binaries", "build/classes/java/test"
 		property "sonar.jacoco.reportPaths", "path/reports/jacoco/jacocoTestReport.xml"
 		property "sonar.junit.reportPaths", "build/test-results/test"
-
 	}
 }
 
 jacocoTestReport {
 	reports {
 		xml.enabled true
-		html.enabled true
 	}
 }
 
