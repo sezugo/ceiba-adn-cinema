@@ -61,6 +61,39 @@ public class PeliculaTest {
         );
     }
 
+    @Test
+    public void validarPublicada(){
+
+        //Arrange - Act - Assert
+        Assertions.assertThrows(ExcepcionObligatorio.class, ()->{
+                    new PeliculaTestDataBuilder().conPublicada(null).build();
+                }, "Se debe ingresar la fecha de publicacion de la pelicula"
+        );
+    }
+
+    @Test
+    public void validarPublicadaNoVacio(){
+
+        //Arrange - Act - Assert
+        Assertions.assertThrows(ExcepcionValorVacio.class, ()->{
+                    new PeliculaTestDataBuilder().conPublicada(VALOR_VACIO).build();
+                }, "Se debe ingresar la fecha de publicacion de la pelicula"
+        );
+    }
+
+    @Test
+    public void validarValor(){
+
+        //Arrange - Act - Assert
+        Assertions.assertThrows(ExcepcionObligatorio.class, ()->{
+                    new PeliculaTestDataBuilder().conValor(null).build();
+                }, "Se debe ingresar el valor de la pelicula"
+        );
+    }
+
+
+
+
 
 
 }
