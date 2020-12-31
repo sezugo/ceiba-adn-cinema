@@ -4,13 +4,6 @@ import com.ceiba.cinema.dominio.modelo.Cliente;
 
 public class ClienteTestDataBuilder {
 
-    private static final Integer ID_CLIENTE = 1;
-    private static final String NOMBRE = "Peter";
-    private static final String APELLIDO = "Parker";
-    private static final String CEDULA = "1000400700";
-    private static final String CELULAR = "3135811244";
-    private static final String DIRECCION = "CL 3 # 33 - 13";
-    private static final String CORREO = "peterparker@marvel.com";
 
     private Integer idCliente;
     private String nombre;
@@ -21,13 +14,13 @@ public class ClienteTestDataBuilder {
     private String correo;
 
     public ClienteTestDataBuilder(){
-        this.idCliente = ID_CLIENTE;
-        this.nombre = NOMBRE;
-        this.apellido = APELLIDO;
-        this.cedula = CEDULA;
-        this.celular = CELULAR;
-        this.dirrecion = DIRECCION;
-        this.correo = CORREO;
+        this.idCliente = 10;
+        this.nombre = "Peter";
+        this.apellido = "Parker";
+        this.cedula = "1036400700";
+        this.celular = "3135811244";
+        this.dirrecion = "CL 3 # 33 - 13";
+        this.correo = "peterparker@marvel.com";
     }
 
     public ClienteTestDataBuilder conNombre(String nombre){
@@ -59,7 +52,6 @@ public class ClienteTestDataBuilder {
         this.correo = correo;
         return this;
     }
-
 
 
     public Cliente build(){

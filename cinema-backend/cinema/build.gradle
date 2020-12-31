@@ -71,5 +71,5 @@ jacocoTestReport {
 
 test {
 	useJUnitPlatform()
-	//dependsOn 'cleanTest'
+	dependsOn 'cleanTest'
 }
