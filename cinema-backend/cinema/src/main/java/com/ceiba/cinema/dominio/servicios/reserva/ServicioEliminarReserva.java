@@ -11,6 +11,6 @@ public class ServicioEliminarReserva {
     }
 
     public void ejecutar(Integer idReserva){
-        this.repositorioReserva.eliminarAlquiler(idReserva);
+        this.repositorioReserva.eliminarReserva(idReserva);
     }
 }
