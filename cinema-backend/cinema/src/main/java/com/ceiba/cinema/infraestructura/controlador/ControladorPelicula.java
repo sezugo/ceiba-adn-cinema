@@ -6,7 +6,6 @@ import com.ceiba.cinema.aplicacion.comando.manejador.pelicula.ManejadorCrearPeli
 import com.ceiba.cinema.aplicacion.comando.manejador.pelicula.ManejadorEliminarPelicula;
 import com.ceiba.cinema.aplicacion.consulta.manejador.pelicula.ManejadorListarPelicula;
 import com.ceiba.cinema.dominio.modelo.Pelicula;
-import com.ceiba.cinema.dominio.modelo.dto.PeliculaDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

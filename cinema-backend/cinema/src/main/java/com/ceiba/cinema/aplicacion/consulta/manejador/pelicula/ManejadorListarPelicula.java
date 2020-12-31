@@ -1,7 +1,6 @@
 package com.ceiba.cinema.aplicacion.consulta.manejador.pelicula;
 
 import com.ceiba.cinema.dominio.modelo.Pelicula;
-import com.ceiba.cinema.dominio.modelo.dto.PeliculaDTO;
 import com.ceiba.cinema.dominio.servicios.pelicula.ServicioListarPelicula;
 
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.ceiba.cinema.dominio.puerto.repositorio;
 
 import com.ceiba.cinema.dominio.modelo.Pelicula;
-import com.ceiba.cinema.dominio.modelo.dto.PeliculaDTO;
 
 import java.util.List;
 

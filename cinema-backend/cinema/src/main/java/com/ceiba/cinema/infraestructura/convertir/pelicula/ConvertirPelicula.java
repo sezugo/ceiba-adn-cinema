@@ -1,6 +1,5 @@
 package com.ceiba.cinema.infraestructura.convertir.pelicula;
 import com.ceiba.cinema.dominio.modelo.Pelicula;
-import com.ceiba.cinema.dominio.modelo.dto.PeliculaDTO;
 import com.ceiba.cinema.infraestructura.entidades.PeliculaEntidad;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
