@@ -7,9 +7,10 @@ import com.ceiba.cinema.dominio.servicios.reserva.ServicioCrearReserva;
 import com.ceiba.cinema.dominio.servicios.reserva.ServicioEliminarReserva;
 import com.ceiba.cinema.dominio.servicios.reserva.ServicioListarReserva;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-public class BeanServicioAlquiler {
+@Configuration
+public class BeanServicioReserva {
 
     @Bean
     public ServicioCrearReserva servicioCrearAlquiler(RepositorioReserva repositorioReserva,

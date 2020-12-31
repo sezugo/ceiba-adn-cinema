@@ -8,7 +8,4 @@ import java.io.Serializable;
 
 @Repository
 public interface RepositorioPeliculaJpa extends JpaRepository<PeliculaEntidad, Serializable> {
-
-    PeliculaEntidad findByNombre(String nombre);
-
 }

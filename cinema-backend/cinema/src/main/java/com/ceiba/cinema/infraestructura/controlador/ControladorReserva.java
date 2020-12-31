@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/alquiler")
-public class ControladorAlquiler {
+@RequestMapping(value = "/reserva")
+public class ControladorReserva {
 
     private final ManejadorCrearReserva manejadorCrearReserva;
     private final ManejadorEliminarReserva manejadorEliminarReserva;
     private final ManejadorListarReserva manejadorListarReserva;
 
-    public ControladorAlquiler(ManejadorCrearReserva manejadorCrearReserva, ManejadorEliminarReserva manejadorEliminarReserva, ManejadorListarReserva manejadorListarReserva) {
+    public ControladorReserva(ManejadorCrearReserva manejadorCrearReserva, ManejadorEliminarReserva manejadorEliminarReserva, ManejadorListarReserva manejadorListarReserva) {
         this.manejadorCrearReserva = manejadorCrearReserva;
         this.manejadorEliminarReserva = manejadorEliminarReserva;
         this.manejadorListarReserva = manejadorListarReserva;
     }
 
     @PostMapping
-    public void crearAlquiler(@RequestBody ComandoReserva comandoReserva){
+    public void crearReserva(@RequestBody ComandoReserva comandoReserva){
         this.manejadorCrearReserva.ejecutar(comandoReserva);
     }
 
     @GetMapping
-    public List<Reserva> listarAlquiler(){
+    public List<Reserva> listarReserva(){
         return this.manejadorListarReserva.ejecutar();
     }
 
-    @DeleteMapping("/{idAlquiler}")
-    public void eliminarAlquiler(@PathVariable Integer idAlquiler){
-        this.manejadorEliminarReserva.ejecutar(idAlquiler);
+    @DeleteMapping("/{idReserva}")
+    public void eliminarReserva(@PathVariable Integer idReserva){
+        this.manejadorEliminarReserva.ejecutar(idReserva);
     }
 
 

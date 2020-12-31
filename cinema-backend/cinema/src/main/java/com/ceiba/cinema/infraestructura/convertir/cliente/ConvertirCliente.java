@@ -1,7 +1,6 @@
 package com.ceiba.cinema.infraestructura.convertir.cliente;
 
 import com.ceiba.cinema.dominio.modelo.Cliente;
-import com.ceiba.cinema.dominio.modelo.dto.ClienteDTO;
 import com.ceiba.cinema.infraestructura.entidades.ClienteEntidad;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -13,7 +12,7 @@ public class ConvertirCliente {
 
     private ModelMapper modelMapper = new ModelMapper();
 
-    public ClienteEntidad convertirCLienteDominioAClienteEntidad(Cliente cliente){
+    public ClienteEntidad convertirDominioPorEntidad(Cliente cliente){
         return modelMapper.map(cliente, ClienteEntidad.class);
     }
 
@@ -21,7 +20,7 @@ public class ConvertirCliente {
         return modelMapper.map(clienteEntidad, Cliente.class);
     }
 
-    public List<Cliente> convertirListaCLienteEntidadAListarCliente(List<ClienteEntidad> listaClienteEntidad, List<Cliente> listaCliente){
+    public List<Cliente> convertirListaClienteEntidadAListarCliente(List<ClienteEntidad> listaClienteEntidad, List<Cliente> listaCliente){
         for(ClienteEntidad clienteEntidad: listaClienteEntidad){
             Cliente cliente = modelMapper.map(clienteEntidad, Cliente.class);
             listaCliente.add(cliente);

@@ -16,13 +16,10 @@ public class ConvertirPelicula {
         return modelMapper.map(pelicula, PeliculaEntidad.class);
     }
 
-    public PeliculaDTO convertirPeliculaEntidadAPeliculaDTO(PeliculaEntidad peliculaEntidad){
-        return modelMapper.map(peliculaEntidad, PeliculaDTO.class);
-    }
 
-    public List<PeliculaDTO> convertirListaPeliculaEntidadAListaPelicula(List<PeliculaEntidad> listaPeliculaEntidad, List<PeliculaDTO> listaPelicula){
+    public List<Pelicula> convertirListaPeliculaEntidadAListaPelicula(List<PeliculaEntidad> listaPeliculaEntidad, List<Pelicula> listaPelicula){
         for(PeliculaEntidad peliculaEntidad: listaPeliculaEntidad){
-            PeliculaDTO pelicula = modelMapper.map(peliculaEntidad, PeliculaDTO.class);
+            Pelicula pelicula = modelMapper.map(peliculaEntidad, Pelicula.class);
             listaPelicula.add(pelicula);
         }
         return listaPelicula;

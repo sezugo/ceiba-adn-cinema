@@ -11,5 +11,4 @@ public interface RepositorioPelicula {
     void actualizarPelicula(Pelicula pelicula);
     void eliminarPelicula(Integer idPelicula);
     List<Pelicula> listarPeliculas();
-    //boolean peliculaYaExiste(Pelicula pelicula);
 }

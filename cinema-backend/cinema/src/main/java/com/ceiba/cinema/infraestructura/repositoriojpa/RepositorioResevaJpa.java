@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 
 @Repository
-public interface RepositorioAlquilerJpa extends JpaRepository<ReservaEntidad, Serializable> {
+public interface RepositorioResevaJpa extends JpaRepository<ReservaEntidad, Serializable> {
 
 
 }

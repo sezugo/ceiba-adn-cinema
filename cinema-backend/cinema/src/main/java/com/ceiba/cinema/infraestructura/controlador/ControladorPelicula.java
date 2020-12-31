@@ -5,6 +5,7 @@ import com.ceiba.cinema.aplicacion.comando.manejador.pelicula.ManejadorActualiza
 import com.ceiba.cinema.aplicacion.comando.manejador.pelicula.ManejadorCrearPelicula;
 import com.ceiba.cinema.aplicacion.comando.manejador.pelicula.ManejadorEliminarPelicula;
 import com.ceiba.cinema.aplicacion.consulta.manejador.pelicula.ManejadorListarPelicula;
+import com.ceiba.cinema.dominio.modelo.Pelicula;
 import com.ceiba.cinema.dominio.modelo.dto.PeliculaDTO;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,18 +31,18 @@ public class ControladorPelicula {
     public void crearPelicula(@RequestBody ComandoPelicula comandoPelicula){
         this.manejadorCrearPelicula.ejecutar(comandoPelicula);
     }
-    /*
+
     @GetMapping
-    public List<PeliculaDTO> listarPelicula(){
+    public List<Pelicula> listarPelicula(){
         return this.manejadorListarPelicula.ejecutar();
     }
-    */
-    @PutMapping("/{idPelicula}")
-    public void actualizarPelicula(@RequestBody ComandoPelicula comandoPelicula,
-                                   @PathVariable Integer idPelicula){
+
+    @PutMapping
+    public void actualizarPelicula(@RequestBody ComandoPelicula comandoPelicula){
         this.manejadorActualizarPelicula.ejecutar(comandoPelicula);
     }
 
+    @DeleteMapping(value = "/{idPelicula}")
     public void eliminarPelicula(@PathVariable Integer idPelicula){
         this.manejadorEliminarPelicula.ejecutar(idPelicula);
 

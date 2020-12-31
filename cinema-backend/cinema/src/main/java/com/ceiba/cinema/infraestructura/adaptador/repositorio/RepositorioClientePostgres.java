@@ -23,7 +23,7 @@ public class RepositorioClientePostgres implements RepositorioCliente {
 
     @Override
     public void crearCliente(Cliente cliente){
-        ClienteEntidad clienteEntidadCrear = convertirCliente.convertirCLienteDominioAClienteEntidad(cliente);
+        ClienteEntidad clienteEntidadCrear = convertirCliente.convertirDominioPorEntidad(cliente);
         repositorioClienteJpa.save(clienteEntidadCrear);
     }
 
@@ -31,13 +31,13 @@ public class RepositorioClientePostgres implements RepositorioCliente {
     public List<Cliente> listarClientes(){
         List<ClienteEntidad> listaClienteEntidad = repositorioClienteJpa.findAll();
         List<Cliente> listaCliente = new ArrayList<>();
-        return convertirCliente.convertirListaCLienteEntidadAListarCliente(listaClienteEntidad, listaCliente);
+        return convertirCliente.convertirListaClienteEntidadAListarCliente(listaClienteEntidad, listaCliente);
     }
 
 
     @Override
     public void actualizarCliente(Cliente cliente){
-        ClienteEntidad clienteEntidadActualizar = convertirCliente.convertirCLienteDominioAClienteEntidad(cliente);
+        ClienteEntidad clienteEntidadActualizar = convertirCliente.convertirDominioPorEntidad(cliente);
         repositorioClienteJpa.save(clienteEntidadActualizar);
     }
 
@@ -56,29 +56,5 @@ public class RepositorioClientePostgres implements RepositorioCliente {
         ClienteEntidad clienteEntidad = repositorioClienteJpa.findByCedula(cedula);
         return (clienteEntidad == null ? null : convertirCliente.convertirClienteEntidadADominio(clienteEntidad));
     }
-
-    /*
-    @Override
-    public ClienteDTO buscarClientePorId(Integer idCliente){
-        ClienteEntidad clienteEntidad = repositorioClienteJpa.findById(idCliente).orElse(null);
-        if(clienteEntidad != null){
-            return convertirCliente.convertirClienteEntidadAClienteDTO(clienteEntidad);
-        }
-        else {
-            return null;
-        }
-    }
-
-    @Override
-    public ClienteDTO buscarClientePorCedula(String cedula){
-        ClienteEntidad clienteEntidad = repositorioClienteJpa.findByCedula(cedula);
-        if(clienteEntidad != null){
-            return convertirCliente.convertirClienteEntidadAClienteDTO(clienteEntidad);
-        }
-        else {
-            return null;
-        }
-    }
-    */
 
 }
