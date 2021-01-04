@@ -5,10 +5,12 @@ import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioReserva;
 import com.ceiba.cinema.infraestructura.convertir.reserva.ConvertirReserva;
 import com.ceiba.cinema.infraestructura.entidades.ReservaEntidad;
 import com.ceiba.cinema.infraestructura.repositoriojpa.RepositorioResevaJpa;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class RepositorioReservaPostgres implements RepositorioReserva {
 
     private RepositorioResevaJpa repositorioResevaJpa;

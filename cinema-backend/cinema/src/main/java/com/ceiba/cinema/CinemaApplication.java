@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan({"co.com.ceiba.cinema"})
 public class CinemaApplication {
 
 	public static void main(String[] args) {
