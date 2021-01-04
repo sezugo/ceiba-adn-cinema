@@ -7,15 +7,11 @@ import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioPelicula;
 public class ServicioCrearReserva {
 
     private RepositorioReserva repositorioReserva;
-    private RepositorioCliente repositorioCliente;
-    private RepositorioPelicula repositorioPelicula;
 
-    public ServicioCrearReserva(RepositorioReserva repositorioReserva,
-                                RepositorioCliente repositorioCliente,
-                                RepositorioPelicula repositorioPelicula){
+
+    public ServicioCrearReserva(RepositorioReserva repositorioReserva){
         this.repositorioReserva = repositorioReserva;
-        this.repositorioCliente = repositorioCliente;
-        this.repositorioPelicula = repositorioPelicula;
+
     }
 
     public void ejecutar(Reserva reserva){

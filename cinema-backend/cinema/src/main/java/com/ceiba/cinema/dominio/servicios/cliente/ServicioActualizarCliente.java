@@ -1,6 +1,6 @@
 package com.ceiba.cinema.dominio.servicios.cliente;
 
-import com.ceiba.cinema.dominio.excepcion.Excepciones;
+import com.ceiba.cinema.dominio.excepcion.ExcepcionGeneral;
 import com.ceiba.cinema.dominio.modelo.Cliente;
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioCliente;
 
@@ -19,7 +19,7 @@ public class ServicioActualizarCliente {
             this.repositorioCliente.actualizarCliente(cliente);
         }
         else {
-            throw new Excepciones(EL_CLIENTE_NO_EXISTE);
+            throw new ExcepcionGeneral(EL_CLIENTE_NO_EXISTE);
         }
     }
 

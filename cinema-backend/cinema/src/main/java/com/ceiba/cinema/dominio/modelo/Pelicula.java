@@ -16,7 +16,7 @@ public class Pelicula {
     private Double valor;
 
     public Pelicula (Integer idPelicula, String nombre, String categoria, String publicada, Double valor){
-        //validaciones
+
 
         ValidarParametro.validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_LA_PELICULA);
         ValidarParametro.validarNoVacio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_LA_PELICULA);

@@ -1,4 +1,7 @@
 package com.ceiba.cinema.dominio.validar;
-//innecesario
+//Observación
+//Metodos a Implementar
+
+
 public class ValidarLogicaNegocio {
 }

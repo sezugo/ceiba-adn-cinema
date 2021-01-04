@@ -1,6 +1,6 @@
 package com.ceiba.cinema.dominio.servicios.cliente;
 
-import com.ceiba.cinema.dominio.excepcion.Excepciones;
+import com.ceiba.cinema.dominio.excepcion.ExcepcionGeneral;
 import com.ceiba.cinema.dominio.modelo.Cliente;
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioCliente;
 
@@ -16,7 +16,7 @@ public class ServicioCrearCliente {
 
     public void ejecutar(Cliente cliente){
         if(repositorioCliente.clienteYaExiste(cliente)){
-            throw new Excepciones(El_CLIENTE_YA_EXISTE);
+            throw new ExcepcionGeneral(El_CLIENTE_YA_EXISTE);
         }
         else{
             this.repositorioCliente.crearCliente(cliente);

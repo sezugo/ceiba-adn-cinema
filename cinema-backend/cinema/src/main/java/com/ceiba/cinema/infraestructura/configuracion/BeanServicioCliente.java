@@ -17,8 +17,8 @@ public class BeanServicioCliente {
     }
 
     @Bean
-    public ServicioListarCliente servicioListarCliente(RepositorioCliente repositorioCliente){
-        return new ServicioListarCliente(repositorioCliente);
+    public ServicioEliminarCliente servicioEliminarCliente(RepositorioCliente repositorioCliente){
+        return new ServicioEliminarCliente(repositorioCliente);
     }
 
     @Bean
@@ -27,9 +27,8 @@ public class BeanServicioCliente {
     }
 
     @Bean
-    public ServicioEliminarCliente servicioEliminarCliente(RepositorioCliente repositorioCliente){
-        return new ServicioEliminarCliente(repositorioCliente);
+    public ServicioListarCliente servicioListarCliente(RepositorioCliente repositorioCliente){
+        return new ServicioListarCliente(repositorioCliente);
     }
-
 
 }

@@ -18,8 +18,8 @@ public class ConvertirReserva {
 
     public List<Reserva> convertirListaReservaEntidadAListaReserva(List<ReservaEntidad> listaReservaEntidad, List<Reserva> listaReserva ){
         for(ReservaEntidad reservaEntidad: listaReservaEntidad){
-            Reserva alquiler = modelMapper.map(reservaEntidad, Reserva.class);
-            listaReserva.add(alquiler);
+            Reserva reserva = modelMapper.map(reservaEntidad, Reserva.class);
+            listaReserva.add(reserva);
         }
         return listaReserva;
     }

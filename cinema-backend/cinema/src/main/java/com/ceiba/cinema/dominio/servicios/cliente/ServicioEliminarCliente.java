@@ -16,6 +16,4 @@ public class ServicioEliminarCliente {
         this.repositorioCliente.eliminarCliente(cliente.getIdCliente());
     }
 
-
-
 }

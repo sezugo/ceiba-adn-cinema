@@ -1,8 +1,6 @@
 package com.ceiba.cinema.infraestructura.configuracion;
 
 import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioReserva;
-import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioCliente;
-import com.ceiba.cinema.dominio.puerto.repositorio.RepositorioPelicula;
 import com.ceiba.cinema.dominio.servicios.reserva.ServicioCrearReserva;
 import com.ceiba.cinema.dominio.servicios.reserva.ServicioEliminarReserva;
 import com.ceiba.cinema.dominio.servicios.reserva.ServicioListarReserva;
@@ -13,19 +11,17 @@ import org.springframework.context.annotation.Configuration;
 public class BeanServicioReserva {
 
     @Bean
-    public ServicioCrearReserva servicioCrearAlquiler(RepositorioReserva repositorioReserva,
-                                                      RepositorioCliente repositorioCliente,
-                                                      RepositorioPelicula repositorioPelicula){
-        return new ServicioCrearReserva(repositorioReserva, repositorioCliente, repositorioPelicula);
+    public ServicioCrearReserva servicioCrearReserva(RepositorioReserva repositorioReserva){
+        return new ServicioCrearReserva(repositorioReserva);
     }
 
     @Bean
-    public ServicioEliminarReserva servicioEliminarAlquiler(RepositorioReserva repositorioReserva){
+    public ServicioEliminarReserva servicioEliminarReserva(RepositorioReserva repositorioReserva){
         return new ServicioEliminarReserva(repositorioReserva);
     }
 
     @Bean
-    public ServicioListarReserva servicioListarAlquiler(RepositorioReserva repositorioReserva){
+    public ServicioListarReserva servicioListarReserva(RepositorioReserva repositorioReserva){
         return new ServicioListarReserva(repositorioReserva);
     }
 

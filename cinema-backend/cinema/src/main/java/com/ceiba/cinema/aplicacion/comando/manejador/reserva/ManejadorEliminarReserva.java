@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorEliminarReserva {
 
-    private final ServicioEliminarReserva eliminarAlquiler;
+    private final ServicioEliminarReserva eliminarReserva;
 
     public ManejadorEliminarReserva(ServicioEliminarReserva eliminarReserva) {
-        this.eliminarAlquiler = eliminarReserva;
+        this.eliminarReserva = eliminarReserva;
     }
 
     public void ejecutar(Integer idReserva){
-        this.eliminarAlquiler.ejecutar(idReserva);
+        this.eliminarReserva.ejecutar(idReserva);
     }
 }

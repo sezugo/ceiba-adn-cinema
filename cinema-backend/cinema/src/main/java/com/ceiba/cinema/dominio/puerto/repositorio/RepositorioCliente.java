@@ -13,7 +13,5 @@ public interface RepositorioCliente {
     void eliminarCliente(Integer idCliente);
     boolean clienteYaExiste(Cliente cliente);
     Cliente buscarPorCedula(String cedula);
-    //ClienteDTO buscarClientePorId(Integer idCliente);
-    //ClienteDTO buscarClientePorCedula(String cedula);
 
 }
