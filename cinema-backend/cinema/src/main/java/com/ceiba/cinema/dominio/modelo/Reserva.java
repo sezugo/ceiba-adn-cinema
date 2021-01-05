@@ -40,12 +40,16 @@ public class Reserva {
 
     }
 
-    public Integer getIdAlquiler() {
+    public Reserva(){
+
+    }
+
+    public Integer getIdReserva() {
         return idReserva;
     }
 
-    public void setIdAlquiler(Integer idAlquiler) {
-        this.idReserva = idAlquiler;
+    public void setIdReserva(Integer idReserva) {
+        this.idReserva = idReserva;
     }
 
     public Cliente getCliente() {
