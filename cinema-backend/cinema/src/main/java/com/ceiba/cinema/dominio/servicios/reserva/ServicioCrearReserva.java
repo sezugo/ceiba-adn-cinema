@@ -23,7 +23,7 @@ public class ServicioCrearReserva {
         validarLogicaNegocio.diaDelMesSinServicio(fechaActual);
         LocalDateTime fechaEntrega = validarLogicaNegocio.calcularFechaEntrega();
         reserva.setFecha(fechaEntrega);
-        Double valor = validarLogicaNegocio.calcularValorTotal(reserva.getFecha(), reserva.getPelicula().getValor());
+        Double valor = validarLogicaNegocio.calcularValorTotal(fechaActual, reserva.getPelicula().getValor());
         reserva.setValorTotal(valor);
 
 
