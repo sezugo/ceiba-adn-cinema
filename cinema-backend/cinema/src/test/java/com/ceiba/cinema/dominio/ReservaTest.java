@@ -20,6 +20,7 @@ public class ReservaTest {
         Assert.assertNotNull(reserva);
     }
 
+
     public void validarFecha(){
         //Arrange - Act - Assert
         Assertions.assertThrows(ExcepcionObligatorio.class, () ->{

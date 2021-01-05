@@ -49,7 +49,7 @@ public class ServicioCrearClienteTest {
 
     }
 
-
+    @Test
     public void buscarPorCedulaTest(){
 
         //Arrange

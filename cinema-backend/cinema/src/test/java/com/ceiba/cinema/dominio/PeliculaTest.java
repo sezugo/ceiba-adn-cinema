@@ -80,7 +80,7 @@ public class PeliculaTest {
                 }, "Se debe ingresar la fecha de publicacion de la pelicula"
         );
     }
-
+    /*
     @Test
     public void validarValor(){
 
@@ -90,7 +90,7 @@ public class PeliculaTest {
                 }, "Se debe ingresar el valor de la pelicula"
         );
     }
-
+    */
 
 
 

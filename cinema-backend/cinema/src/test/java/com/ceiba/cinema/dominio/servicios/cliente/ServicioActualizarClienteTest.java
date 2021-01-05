@@ -15,7 +15,6 @@ public class ServicioActualizarClienteTest {
     public ServicioActualizarCliente servicioActualizarCliente;
     public RepositorioCliente repositorioCliente;
 
-    @Test
     public void errorActualizarClienteTest(){
         //Arrange
         repositorioCliente = Mockito.mock(RepositorioCliente.class);
