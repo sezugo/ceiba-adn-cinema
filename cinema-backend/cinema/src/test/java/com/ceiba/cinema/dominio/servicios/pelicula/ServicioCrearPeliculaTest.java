@@ -7,27 +7,27 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
 
-public class ServicioActualizarPeliculaTest {
+public class ServicioCrearPeliculaTest {
 
-    public ServicioActualizarPelicula servicioActualizarPelicula;
     public ServicioCrearPelicula servicioCrearPelicula;
     public RepositorioPelicula repositorioPelicula;
 
+
     @Test
-    public void actualizarPeliculaTest(){
+    public void crearPeliculaTest(){
         //Arrange
         repositorioPelicula = Mockito.mock(RepositorioPelicula.class);
-        servicioActualizarPelicula = new ServicioActualizarPelicula(repositorioPelicula);
-        Pelicula pelicula = new PeliculaTestDataBuilder().build();
         servicioCrearPelicula = new ServicioCrearPelicula(repositorioPelicula);
-        servicioCrearPelicula.ejecutar(pelicula);
-        pelicula.setValor(50000d);
+        Pelicula pelicula = new PeliculaTestDataBuilder().build();
 
         //Act
-        servicioActualizarPelicula.ejecutar(pelicula);
+        servicioCrearPelicula.ejecutar(pelicula);
 
         //Assert
         Assertions.assertEquals(pelicula.getValor(), 50000d);
+
     }
+
+
 
 }
