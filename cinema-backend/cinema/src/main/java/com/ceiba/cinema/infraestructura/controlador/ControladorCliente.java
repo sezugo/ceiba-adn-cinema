@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/cliente")
 
 public class ControladorCliente {
@@ -32,6 +33,7 @@ public class ControladorCliente {
     public void crearCliente(@RequestBody ComandoCliente comandoCliente) {
         this.manejadorCrearCliente.ejecutar(comandoCliente);
     }
+
 
     @GetMapping
     public List<Cliente> listarClientes(){

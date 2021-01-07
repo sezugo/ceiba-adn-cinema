@@ -1,9 +1,8 @@
 package com.ceiba.cinema.dominio.infraestructura;
 
-
 import com.ceiba.cinema.CinemaApplication;
-import com.ceiba.cinema.aplicacion.comando.ComandoCliente;
-import com.ceiba.cinema.testdatabuilder.ComandoClienteTestDataBuilder;
+import com.ceiba.cinema.aplicacion.comando.ComandoPelicula;
+import com.ceiba.cinema.testdatabuilder.ComandoPeliculaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,8 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(classes = CinemaApplication.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ControladorClienteTest {
-
+public class ControladorPeliculaTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;
@@ -43,16 +41,23 @@ public class ControladorClienteTest {
     }
 
     @Test
-    public void crearCliente() throws Exception{
+    public void crearPelicula() throws  Exception{
         //Arrange
-        ComandoCliente comandoCliente = new ComandoClienteTestDataBuilder().build();
+        ComandoPelicula comandoPelicula = new ComandoPeliculaTestDataBuilder().build();
 
         //Act - Assert
-        mockMvc.perform(post("/cliente")
+        mockMvc.perform(post("/pelicula")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(comandoCliente)))
+                .content(objectMapper.writeValueAsString(comandoPelicula)))
                 .andExpect(status().isOk()
                 );
     }
+
+
+
+
+
+
+
 
 }
