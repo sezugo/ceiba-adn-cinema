@@ -17,7 +17,7 @@ public class ValidarLogicaNegocio {
 
     public void diaDelMesSinServicio(LocalDateTime fechaActual){
         Integer diaDelMes = fechaActual.getDayOfMonth();
-        if(diaDelMes == DIA_QUE_NO_HAY_SERVICIO_AL_CLIENTE){
+        if(diaDelMes.equals(DIA_QUE_NO_HAY_SERVICIO_AL_CLIENTE)){
             throw new ExcepcionGeneral(ExcepcionGeneral.NO_HAY_RESERVAS_lOS_DIAS_30);
         }
     }
