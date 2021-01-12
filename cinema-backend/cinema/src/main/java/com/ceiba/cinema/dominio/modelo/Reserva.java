@@ -39,7 +39,7 @@ public class Reserva {
 
 
     }
-
+    //sobra
     public Reserva(){
 
     }

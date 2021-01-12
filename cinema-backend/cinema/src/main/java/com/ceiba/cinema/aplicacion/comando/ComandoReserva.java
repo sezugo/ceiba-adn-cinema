@@ -3,8 +3,6 @@ package com.ceiba.cinema.aplicacion.comando;
 import com.ceiba.cinema.dominio.modelo.Cliente;
 import com.ceiba.cinema.dominio.modelo.Pelicula;
 
-import java.time.LocalDateTime;
-
 public class ComandoReserva {
 
     private Integer idReserva;

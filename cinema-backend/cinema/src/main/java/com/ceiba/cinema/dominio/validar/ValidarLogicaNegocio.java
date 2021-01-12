@@ -1,6 +1,4 @@
 package com.ceiba.cinema.dominio.validar;
-//Observación
-//Metodos a Implementar
 
 
 import com.ceiba.cinema.dominio.excepcion.ExcepcionGeneral;
